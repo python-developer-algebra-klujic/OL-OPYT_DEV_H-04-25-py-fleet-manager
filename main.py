@@ -2,7 +2,9 @@
 - dodavanje novog vozila
 '''
 import json
+from datetime import datetime as dt
 from typing import Dict, List
+
 
 
 FILE_PATH = 'sample_data/trucks_sample_eu.json'
@@ -90,5 +92,22 @@ def input_new_vehicle(data: List):
 
 
 data = load_from_json()
-print(data[0] if len(data) > 0 else 'Nema podataka u datoteci')
-display_all_vehicles(data)
+# print(f'Datum kupovine: {data[0]['purchase_date']}')
+# print(f'Datum registracije: {data[0]['registration_date']}')
+
+# print(dt.now())
+
+# yesterday = dt(2025, 10, 6, 23, 35, 48)
+# print(yesterday)
+
+# print(dt.now() - yesterday)
+
+today = dt.strptime('2025-10-07 15:30:00', '%Y-%m-%d %H:%M:%S')
+today = dt.strptime('07-10-2025 15:30:00', '%d-%m-%Y %H:%M:%S')
+today = dt.strptime('10-07-2025---15:30:00', '%m-%d-%Y---%H:%M:%S')
+print(today.strftime('%a %A %b %B %d.%m.%Y. %H:%M:%S'))
+
+purchase_date = dt.strptime(data[0]['purchase_date'], '%Y-%m-%d')
+print(purchase_date.strftime('%a %A %b %B %d.%m.%Y.'))
+registration_date = dt.strptime(data[0]['registration_date'], '%Y-%m-%d')
+print(registration_date.strftime('%A, %dth of %B %Y - %H:%M:%S'))
