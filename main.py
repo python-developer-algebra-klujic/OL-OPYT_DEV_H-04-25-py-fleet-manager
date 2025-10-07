@@ -6,7 +6,7 @@
 import json
 
 
-FILE_PATH = 'trucks_sample_eu.json'
+FILE_PATH = 'sample_data/trucks_sample_eu.json'
 
 
 
