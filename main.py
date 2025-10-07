@@ -92,5 +92,3 @@ def input_new_vehicle(data: List):
 data = load_from_json()
 print(data[0] if len(data) > 0 else 'Nema podataka u datoteci')
 display_all_vehicles(data)
-
-
