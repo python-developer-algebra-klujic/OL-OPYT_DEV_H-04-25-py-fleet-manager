@@ -32,6 +32,8 @@ def load_from_json() -> List:
 
 
 def display_vehicle_data(vehicle: Dict) -> None:
+    # for k, v in vehicle.items():
+    #     pass
     print()
     print(vehicle["id"])
     print(vehicle["vin"])
@@ -59,6 +61,7 @@ def display_vehicle_data(vehicle: Dict) -> None:
 def display_all_vehicles(data: List):
     for truck in data:
         display_vehicle_data(truck)
+
 
 
 def input_new_vehicle(data: List):
